@@ -1,7 +1,6 @@
 """
 Name: Michael Diorio
 File Name: vigenere.py
-
 Problem: To implement the vigenere cipher using graphics and string processing.
 Certification of Authenticity: I certify that this assignment is entirely my own work.
 """
