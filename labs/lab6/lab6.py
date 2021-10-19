@@ -57,7 +57,7 @@ def pig_latin():
 
 
 def main():
-    # name_reverse()
+    name_reverse()
     # company_name()
     # initials()
     # names()
