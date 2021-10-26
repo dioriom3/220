@@ -34,8 +34,8 @@ def weighted_average(in_file_name, out_file_name):
             outfile.write(phrase + "Error: The weights are less than 100." + "\n")
         else:
             for j in range(0, len(values), 2):
-                grades = int(values[j + 1])
-                weights = int(values[j])
+                grades = float(values[j + 1])
+                weights = float(values[j])
                 score = score + (weights * grades)
             overall_score = score / 100
             acc = acc + overall_score
@@ -43,11 +43,8 @@ def weighted_average(in_file_name, out_file_name):
             overall_score = round((score / 100), 1)
             outfile.write(phrase + str(overall_score) + "\n")
 
-    if acc > 0:
-        class_avg = round((acc / num_students), 1)
-        outfile.write("Class average: " + str(class_avg))
-    else:
-        outfile.write("Class average: 0.0")
+    class_avg = round((acc / num_students), 1)
+    outfile.write("Class average: " + str(class_avg))
 
 
 def main():
