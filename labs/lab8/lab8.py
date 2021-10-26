@@ -2,6 +2,7 @@
 Name: Michael Diorio
 lab8.py
 """
+from lab7.lab7 import encode, encode_better
 
 
 def number_words(in_file_name, out_file_name):
@@ -11,7 +12,7 @@ def number_words(in_file_name, out_file_name):
     for line in infile:
         words = line.split()
         for word in words:
-            outfile.write(str(i) + " " + word + "\n" )
+            outfile.write(str(i) + " " + word + "\n")
             i = i + 1
 
 
@@ -21,6 +22,7 @@ def hourly_wages(in_file_name, out_file_name):
     for line in infile:
         parts = line.split()
         wage = float(parts[2])
+        wage = wage + 1.65
         wage = wage * int(parts[3])
         outfile.write(parts[0] + " " + parts[1] + " " + (str("${:.2f}".format(wage))))
 
@@ -42,18 +44,28 @@ def send_message(file, friend):
 
 def send_safe_message(file, friend, key):
     infile = open(file, "r")
-    outfile = open(encode(message, key))
+    outfile = open(friend + ".txt", "w+")
+    for line in infile:
+        outfile.write(encode(line, key))
 
 
 def send_uncrackable_message(file, friend, pad):
-    padfile = open(pad, "r")
-
+    infile = open(file, "r")
+    pad_file = open(pad, "r")
+    outfile = open(friend + ".txt", "w+")
+    key = pad_file.read()
+    for line in infile:
+        outfile.write(encode_better(line, key))
 
 
 def main():
-    print(number_words(Walrus.txt,
-    #
-    #
+    number_words("Walrus.txt", "WalrusOutput.txt")
+    hourly_wages("hourly_wages.txt", "NewWage.txt")
+    calc_check_sum("0072946520")
+    send_message("message.txt", "Bob")
+    # send_safe_message("secret_message.txt", "bob", )
+    # send_uncrackable_message("safest_message.txt", )
+
     pass
 
 
