@@ -1,6 +1,6 @@
 """
 Name: Michael Diorio
-Problem: To process numeric data from a text file and calculate weighted averages
+Problem: To process numeric data from a text file and calculate weighted averages.
 Certification of Authenticity: I certify that this assignment is entirely my own work.
 """
 
@@ -43,7 +43,7 @@ def weighted_average(in_file_name, out_file_name):
             overall_score = round((score / 100), 1)
             outfile.write(phrase + str(overall_score) + "\n")
 
-    if num_students > 0:
+    if acc > 0:
         class_avg = round((acc / num_students), 1)
         outfile.write("Class average: " + str(class_avg))
     else:
