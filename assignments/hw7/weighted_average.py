@@ -1,6 +1,7 @@
 """
 Name: Michael Diorio
-Problem: To process numeric data from a text file and calculate weighted averages.
+Problem: To process numeric data from a text file, calculate weighted averages and write
+them to another text file.
 Certification of Authenticity: I certify that this assignment is entirely my own work.
 """
 
