@@ -39,10 +39,13 @@ def main():
     bumper2_y = get_random(10)
 
     inst_pt = Point(win.getWidth() / 2, win.getHeight() - 10)
-    instructions = Text(inst_pt, "Click twice to close :)")
+    instructions = Text(inst_pt, "Type q to quit. :)")
     instructions.draw(win)
 
-    while not win.checkMouse():
+    while True:
+        key = win.checkKey()
+        if key == "q":
+            break
         bumper1.move(bumper1_x, bumper1_y)
         bumper2.move(bumper2_x, bumper2_y)
         if hit_horizontal(bumper1, win):
@@ -61,7 +64,6 @@ def main():
 
         time.sleep(0.005)
 
-    win.getMouse()
     win.close()
 
 
