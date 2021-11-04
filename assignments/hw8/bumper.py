@@ -46,8 +46,10 @@ def main():
         key = win.checkKey()
         if key == "q":
             break
+
         bumper1.move(bumper1_x, bumper1_y)
         bumper2.move(bumper2_x, bumper2_y)
+
         if hit_horizontal(bumper1, win):
             bumper1_y = -1 * bumper1_y
         elif hit_vertical(bumper1, win):
