@@ -54,22 +54,21 @@ def num_digits():
 def hi_lo_game():
     num = randint(1, 100)
     guesses = 0
-    guess = eval(input("Guess a number from 1 to 100"))
+    guess = eval(input("Guess a number from 1 to 100: "))
     while guess != num and guesses < 7:
-        guesses += 1
-        if guess > num and guesses < 7:
+        if guess > 100 and guesses < 7:
             print("The number entered was too high.")
-            guess = eval(input("Guess again."))
-        elif guess < num and guesses < 7:
+            guess = eval(input("Guess again: "))
+        elif guess < 0 and guesses < 7:
             print("The number entered was too low.")
-            guess = eval(input("Guess again."))
+            guess = eval(input("Guess again: "))
         guesses += 1
         if guess != num and guesses < 7:
-            guess = eval(input("Guess a number 1-100"))
+            guess = eval(input("Try again, guess a number 1-100: "))
     if guess == num:
         print("You guessed the number correctly in " + str(guesses) + " guesses.")
     else:
-        print("The correct number was " + str(num) + " !")
+        print("Out of guesses, the correct number was " + str(num) + "!")
 
 
 
@@ -79,7 +78,7 @@ def main():
     # print(search(4, data))
     # good_input()
     # num_digits()
-    # hi_lo_game()
+    hi_lo_game()
     pass
 
 
