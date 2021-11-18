@@ -27,7 +27,8 @@ def main():
     text2.draw(win)
 
     doors_list = [button1, button2, button3]
-    secret_door = doors_list[randint(0, 2)]
+    rand_door = randint(0, 2)
+    secret_door = doors_list[rand_door]
     click = win.getMouse()
 
     if secret_door.is_clicked(click):
@@ -45,26 +46,21 @@ def main():
             button1.color_button("red")
             text.undraw()
             text2.undraw()
-            text11 = Text(Point(225, 75), "Sorry, wrong door. You lost!")
-            text11.setTextColor("red")
-            text11.draw(win)
         elif button2.is_clicked(click):
             button2.color_button("red")
             text.undraw()
             text2.undraw()
-            text7 = Text(Point(225, 75), "Sorry, wrong door. You lost!")
-            text7.setTextColor("red")
-            text7.draw(win)
         elif button3.is_clicked(click):
             button3.color_button("red")
             text.undraw()
             text2.undraw()
-            text9 = Text(Point(225, 75), "Sorry, wrong door. You lost!")
-            text9.setTextColor("red")
-            text9.draw(win)
-
-    text8 = Text(Point(225, 430), "Click to close window.")
+    text11 = Text(Point(225, 75), "Sorry, wrong door. You lost!")
+    text11.setTextColor("red")
+    text11.draw(win)
+    text8 = Text(Point(225, 440), "Click to close window.")
     text8.draw(win)
+    correct_door = Text(Point(225, 425), "Door " + str(rand_door + 1) + " is the secret door")
+    correct_door.draw(win)
 
     win.getMouse()
     win.close()
